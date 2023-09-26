@@ -27,4 +27,12 @@ public class RobotCollisionTest {
         assertThat(robotCollision.calculateCollisionPosition(0, 0, 90, 90,5))
                 .isEqualTo("(0,5)");
     }
+
+    @Test
+    @DisplayName("Test calculate collision Position Left")
+    void testCalculateCollisionPositionLeft(){
+        assertThat(robotCollision.calculateCollisionPosition(0, 0, -90, 90,5))
+                .isEqualTo("(0,-5)");
+    }
+
 }
