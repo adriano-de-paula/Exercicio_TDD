@@ -35,4 +35,24 @@ public class RobotCollisionTest {
                 .isEqualTo("(0,-5)");
     }
 
+    @Test
+    @DisplayName("Test invalid angle")
+    void testInvalidAngle(){
+        assertThat(robotCollision.calculateCollisionPosition(0, 0, 200, 90,5))
+                .isEqualTo("Erro");
+    }
+
+    @Test
+    @DisplayName("Test invalid beam")
+    void testInvalidBeam(){
+        assertThat(robotCollision.calculateCollisionPosition(0, 0, 45, 185,5))
+                .isEqualTo("Erro");
+    }
+
+    @Test
+    @DisplayName("Test negative distance")
+    void testNegativeDistance(){
+        assertThat(robotCollision.calculateCollisionPosition(0, 0, 45, 90,-5))
+                .isEqualTo("Erro");
+    }
 }
